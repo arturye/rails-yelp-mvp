@@ -1,15 +1,363 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* General container styling */
+.restaurant-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f3f0ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling */
+.restaurant-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3c096c;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 3px 3px 10px rgba(60, 9, 108, 0.3);
+}
+
+/* List styling */
+.restaurant-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual restaurant item */
+.restaurant-item {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #e0b3ff, #ffe7ff);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 10px rgba(60, 9, 108, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.restaurant-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 15px rgba(60, 9, 108, 0.25);
+}
+
+/* Link styling */
+.restaurant-link {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #5a189a;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-right: 15px;
+  flex: 1;
+}
+
+.restaurant-link:hover {
+  color: #3c096c;
+}
+
+/* Address styling */
+.restaurant-address {
+  font-size: 1rem;
+  color: #333;
+  background-color: rgba(90, 13, 154, 0.1);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-align: left;
+  width: 60%;
+}
+
+/* Button styling */
+.add-restaurant-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background-color: #ff007a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-restaurant-btn:hover {
+  background-color: #d10067;
+  transform: translateY(-4px);
+}
+
+
+/* General form container */
+.restaurant-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f5ff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input fields */
+.form-input {
+  margin-bottom: 20px;
+}
+
+.form-input label {
+  font-size: 1.1rem;
+  color: #5a0d9a;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Styled input fields */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #5a0d9a;
+  box-shadow: 0 0 5px rgba(90, 13, 154, 0.3);
+}
+
+/* Submit button */
+.form-submit {
+  text-align: center;
+}
+
+.btn-submit {
+  padding: 12px 24px;
+  background-color: #5a0d9a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #3c096c;
+  transform: translateY(-3px);
+}
+
+/* "Back to Restaurants" button */
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff007a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #d10067;
+  transform: translateY(-3px);
+}
+
+
+/* Container for the restaurant details */
+.restaurant-details {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  background-color: #fff5ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant name styling */
+.restaurant-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #5a0d9a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Restaurant info styling */
+.restaurant-info p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.restaurant-info strong {
+  color: #5a0d9a;
+}
+
+/* Reviews title */
+.reviews-title {
+  font-size: 2rem;
+  color: #3c096c;
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for the reviews list */
+.reviews-list {
+  margin-top: 20px;
+}
+
+.review-item {
+  background-color: #e0b3ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-content {
+  font-size: 1rem;
+  color: #333;
+}
+
+.review-rating {
+  font-size: 1.1rem;
+  color: #ff007a;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Buttons styling */
+.restaurant-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-review {
+  background-color: #5a0d9a;
+  color: white;
+  margin-right: 15px;
+}
+
+.btn-review:hover {
+  background-color: #3c096c;
+  transform: translateY(-3px);
+}
+
+.btn-back {
+  background-color: #ff007a;
+  color: white;
+}
+
+.btn-back:hover {
+  background-color: #d10067;
+  transform: translateY(-3px);
+}
+
+
+/* General container for the Add Review page */
+.review-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #5a0d9a;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(90, 13, 154, 0.3);
+}
+
+/* Form container */
+.review-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 25px;
+  background-color: #fff5ff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form input styling */
+.form-input {
+  margin-bottom: 20px;
+}
+
+.form-input label {
+  font-size: 1.1rem;
+  color: #5a0d9a;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input fields */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #5a0d9a;
+  box-shadow: 0 0 5px rgba(90, 13, 154, 0.3);
+}
+
+/* Submit button styling */
+.form-submit {
+  text-align: center;
+}
+
+.btn-submit {
+  padding: 12px 24px;
+  background-color: #5a0d9a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #3c096c;
+  transform: translateY(-3px);
+}
+
+/* Back to restaurant button */
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff007a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #d10067;
+  transform: translateY(-3px);
+}
